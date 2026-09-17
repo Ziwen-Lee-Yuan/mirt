@@ -1,22 +1,5 @@
-*.mex*
-*.fld
-*.eps
-*.mat
-*.pdf
-*.raw
-*.aux
-*.bbl
-*.blg
-*.log
-*.out
-Makefile
-data/downloads/
-freemat/
-give
-help-pc/
-mex/
-mri-rf/graf-splitting/
-octave/
-reproduce/
-todo-data
-todo-matlab-cut
+# Compiled mex - platform specific, rebuilt locally via mex_build.m
+**/*.mexa64
+**/*.mexw64
+**/*.mexmaci64
+*.asv

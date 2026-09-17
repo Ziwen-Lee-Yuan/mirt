@@ -95,6 +95,7 @@ end
 if ~isvar('xssos'), printm 'sqrt sum-of-squares reconstruction'
 	xssos = sqrt(sum(abs(xcp).^2, 3));
 	xssos = ir_wls_init_scale(1, xtrue, xssos); % cheat trick for scaling
+%	xssos = ir_wls_init_scale(Am, yi, xssos); % todo: show correct way
 	im(3, abs(xssos), 'sum-of-squares recon'), cbar
 	xlabelf('NRMSE %.1f%%', 100*nrms(xssos(:), xtrue(:)))
 prompt

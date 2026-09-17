@@ -52,6 +52,7 @@ if arg.chat && n_tr ~= n_tr_init
 end
 
 if isempty(arg.labels)
+	% todo: use brainweb data from MIRTdata
 	if isempty(arg.brainweb_dir)
 		arg.brainweb_dir = '~/l/dat/phantom,digital/brainweb/ms/';
 	end
