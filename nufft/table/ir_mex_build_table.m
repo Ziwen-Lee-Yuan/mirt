@@ -3,7 +3,9 @@
 % into mex files.
 
 dir_current = pwd;
-dir_nufft = path_find_dir('nufft');
+% parent of this file's folder (nufft/table/), not path_find_dir('nufft'),
+% which any other folder ending in "nufft" earlier on the path would shadow.
+dir_nufft = fileparts(fileparts(mfilename('fullpath')));
 dir_table = [dir_nufft filesep 'table'];
 cd(dir_table)
 

@@ -33,7 +33,9 @@ if K_N ~= 2, error 'only K/N=2 done', end
 %	warning('off', 'Octave:load-file-in-path', 'local')
 %end
 
-nufft_dir = path_find_dir('nufft');
+% this file's own folder, not path_find_dir('nufft'), which any other folder
+% ending in "nufft" earlier on the path would shadow.
+nufft_dir = fileparts(mfilename('fullpath'));
 s = load([nufft_dir filesep 'param-data/nufft_gauss2.mat']);
 
 ii = find(J == s.Jgauss2);

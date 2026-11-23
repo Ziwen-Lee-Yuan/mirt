@@ -129,7 +129,10 @@ if streq(alpha, 'best')
 %			warning('off', 'Octave:load-file-in-path', 'local')
 %		end
 		try
-			s = path_find_dir('nufft');
+			% this file's own folder, not path_find_dir('nufft'): that returns the FIRST
+			% path entry ending in "nufft", so any such folder added later shadows this
+			% table and alpha falls back to 2.34*J with only a printed warning.
+			s = fileparts(mfilename('fullpath'));
 			s = [s filesep 'param-data' filesep 'kaiser,m=0'];
 			s = load(s);
 			ii = find(J == s.Jlist);
